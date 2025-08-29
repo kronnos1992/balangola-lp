@@ -1,0 +1,22 @@
+@page "/notfound"
+@layout MainLayout
+
+<PageTitle>Página não encontrada</PageTitle>
+
+<div class="notfound-container">
+    <h1>😕 Ops! Página não encontrada</h1>
+    <p>
+        A página que você tentou acessar não existe ou foi movida.
+    </p>
+
+    <button class="btn-back" @onclick="VoltarHome">Voltar à Home</button>
+</div>
+
+@code {
+    private void VoltarHome()
+    {
+        Navigation.NavigateTo("/");
+    }
+
+    [Inject] private NavigationManager Navigation { get; set; } = default!;
+}

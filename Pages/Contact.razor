@@ -1,0 +1,67 @@
+@page "/contactos"
+
+<!-- Importação dos ícones do Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div class="page-container">
+    <h1>Contactos</h1>
+    <p>Entre em contacto connosco pelos seguintes meios:</p>
+
+    <div class="contact-grid">
+        <!-- Contactos -->
+        <div class="contact-info">
+            <p>
+                <a href="mailto:balangola.internacional@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                    <strong>Email:</strong> balangola.internacional@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <a href="tel:+244923757515">
+                    <i class="fa-solid fa-phone"></i>
+                    <strong>Telefone:</strong> +244 923 757 515
+                </a>
+            </p>
+
+            <p>
+                <a href="https://wa.me/244923757515" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <strong>WhatsApp:</strong> +244 923 757 515
+                </a>
+            </p>
+
+            <p>
+                <a href="#" onclick="showMap(event, -8.834944, 13.261028)">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <strong>Endereço 1:</strong><br>
+                    Rua Travessa da Cela, Bairro Nelito Soares, S/N,
+                    Distrito Urbano do Rangel, Munícipio de Luanda, Luanda - Angola
+                </a>
+            </p>
+
+            <p>
+                <a href="#" onclick="showMap(event, -8.834200, 13.262500)">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <strong>Endereço 2:</strong><br>
+                    Rua Lino Amezaga, Bairro Nelito Soares, S/N,
+                    Distrito Urbano do Rangel, Munícipio de Luanda, Luanda - Angola
+                </a>
+            </p>
+        </div>
+
+        <!-- Waze Map -->
+        <div class="map">
+            <iframe id="wazeMap" src="https://embed.waze.com/iframe?zoom=16&lat=-8.834944&lon=13.261028&pin=1"
+                width="600" height="450" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showMap(event, lat, lon) {
+        event.preventDefault();
+        var iframe = document.getElementById("wazeMap");
+        iframe.src = `https://embed.waze.com/iframe?zoom=16&lat=${lat}&lon=${lon}&pin=1`;
+    }
+</script>

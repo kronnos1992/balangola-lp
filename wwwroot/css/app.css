@@ -1,0 +1,865 @@
+/* Estilos globais */
+html,
+body {
+    height: 100%;
+    /* garante altura total */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333;
+    background: #fafafa;
+    scroll-behavior: smooth;
+}
+
+.page {
+    flex: 1;
+    /* ocupa o espaço disponível */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    /* empurra o footer para baixo */
+    padding-top: 80px;
+    /* compensa o navbar fixo */
+}
+
+/* Navbar fixa no topo */
+.navbar {
+    background: #0077b6;
+    padding: 15px 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* ocupa toda a largura */
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar .logo {
+    margin: 0;
+    font-size: 1.5rem;
+    
+}
+.navbar .logo a {
+    display: flex;
+    /* coloca logo e texto lado a lado */
+    align-items: center;
+    /* centraliza verticalmente */
+    gap: 0.5rem;
+    /* espaço entre ícone e texto */
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.logo-image {
+    width: 1.8rem;
+    /* tamanho fixo da logo */
+    height: auto;
+    /* mantém proporção */
+    display: block;
+}
+
+.navbar .logo a:hover {
+    color: #ffb703;
+    transform: scale(1.05);
+}
+
+.navbar nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #ffb703;
+}
+
+/* Hero section */
+.hero {
+    margin-top: 1rem;
+    background: linear-gradient(135deg, #0077b6, #0096c7);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.hero .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #ffb703;
+    color: #000;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.hero .btn:hover {
+    background: #ff9500;
+}
+
+/* Seção Serviços */
+.servicos {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Contato */
+.contato {
+    background: #f8f9fa;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+form {
+    max-width: 450px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+form input,
+form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 14px;
+    background: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #005f8a;
+}
+
+.footer {
+    background: #0077b6;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Evita que o conteúdo fique escondido atrás do footer */
+main {
+    padding-top: 80px;
+    /* compensa o navbar fixo */
+    padding-bottom: 60px;
+    /* compensa a altura do footer fixo */
+}
+
+.notfound-container {
+    text-align: center;
+    padding: 50px;
+    color: #333;
+}
+
+.notfound-container h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.notfound-container p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.btn-back {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #005a9e;
+}
+/* ---------- Páginas Gerais ---------- */
+.page-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Títulos */
+.page-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #0078d7;
+}
+
+/* Subtítulos */
+.page-container h2 {
+    font-size: 1.8rem;
+    margin: 20px 0 10px;
+    color: #333;
+}
+
+/* Texto */
+.page-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Listas */
+.page-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.page-container ul li {
+    background: #f8f9fa;
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+/* Botões padrão */
+.page-button {
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #0078d7;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.page-button:hover {
+    background: #005a9e;
+    transform: scale(1.05);
+}
+
+/* ---------- Contacto ---------- */
+.contact-info {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.contact-info strong {
+    color: #0078d7;
+}
+
+/* ---------- Serviços ---------- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.service-card {
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+    max-width: 700px;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    color: #0078d7;
+    margin-bottom: 10px;
+}
+
+/* ---------- Animação ---------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   Estilos Globais
+========================= */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+h1,
+h2,
+h3 {
+    color: #222;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   Hero Section
+========================= */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('/images/hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero .highlight {
+    color: #f0c040;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   Botões
+========================= */
+.btn,
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn {
+    background-color: #f0c040;
+    color: #222;
+}
+
+.btn:hover {
+    background-color: #d9a930;
+}
+
+.btn-secondary {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #555;
+}
+
+/* =========================
+   Seções
+========================= */
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.services-preview ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 30px auto;
+    max-width: 700px;
+}
+
+.services-preview ul li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.services-preview ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #f0c040;
+    font-weight: bold;
+}
+
+/* =========================
+   Diferenciais - Grid
+========================= */
+.diferenciais .grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 0 0.7rem;
+    margin-top: 30px;
+}
+
+.diferenciais .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diferenciais .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   Call to Action (CTA)
+========================= */
+.cta {
+    background: #f0c040;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.cta h2 {
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+}
+
+.services-cta {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    margin: 3rem auto;
+    max-width: 900px;
+}
+
+.services-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.services-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.services-cta .btn-primary {
+    display: inline-block;
+    background: #ffcc00;
+    color: #000;
+    font-size: 1.1rem;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.service-card img.service-icon {
+    max-width: 15rem;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+.container-services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 colunas */
+    gap: 20px;
+    align-items: stretch;
+    justify-items: center;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* duas colunas */
+    gap: 30px;
+    align-items: start;
+    margin-top: 20px;
+}
+
+.contact-info {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.map iframe {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info a {
+    display: block;
+    /* link ocupa a linha toda */
+    text-decoration: none;
+    /* remove sublinhado */
+    color: inherit;
+    /* mantém a cor padrão do texto */
+    padding: 5px;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.contact-info a:hover {
+    background: #f0f0f0;
+    /* destaque no hover */
+    color: #007bff;
+    /* muda cor no hover */
+}
+
+.contact-info i {
+    margin-right: 6px;
+    color: #007bff;
+}
+
+.diferenciais .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.diferenciais .card {
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.diferenciais .card:hover {
+    transform: translateY(-5px);
+}
+
+.diferenciais i {
+    color: #007bff;
+    margin-bottom: 15px;
+    font-size: 4rem;
+    /* tamanho base */
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .diferenciais .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .diferenciais i {
+        font-size: 3.5rem;
+    }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    .diferenciais .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diferenciais i {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .container-services {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 colunas em telas menores */
+    }
+}
+/* ------------------------
+   Diferenciais - Layout
+-------------------------*/
+.diferenciais-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.diferencial {
+    flex: 1 1 250px;
+    max-width: 300px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    /* oculto no início */
+    transform: scale(0.9);
+    /* leve zoom out inicial */
+}
+
+.diferencial:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.diferencial i {
+    font-size: 3rem;
+    color: #0077cc;
+    margin-bottom: 1rem;
+}
+
+.diferencial h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.diferencial p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ------------------------
+   Animação Fade/Zoom
+-------------------------*/
+.fade-zoom-in {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* ------------------------
+   Responsividade
+-------------------------*/
+@media (max-width: 768px) {
+    .diferenciais-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .diferencial {
+        max-width: 90%;
+    }
+
+    .diferencial i {
+        font-size: 2.5rem;
+    }
+
+    .diferencial h3 {
+        font-size: 1.2rem;
+    }
+
+    .diferencial p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .diferencial i {
+        font-size: 2rem;
+    }
+
+    .diferencial h3 {
+        font-size: 1.1rem;
+    }
+
+    .diferencial p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    .container-services {
+        grid-template-columns: 1fr;
+        /* apenas 1 coluna */
+    }
+}
+
+/* Navegação lateral (bolhas) */
+.side-dots {
+    position: fixed;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1100;
+}
+
+.side-dots .dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ccc;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.side-dots .dot:hover {
+    background: #0077b6;
+    transform: scale(1.2);
+}
+
+/* Estado ativo */
+.side-dots .dot.active {
+    background: #ffb703;
+    transform: scale(1.3);
+}
+.scroll-bubbles {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bubble {
+    width: 14px;
+    height: 14px;
+    background: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.bubble:hover {
+    background: #ff6600;
+    /* cor de destaque */
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-bout{
+    max-width: 1px;
+}
