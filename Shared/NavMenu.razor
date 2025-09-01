@@ -1,16 +1,25 @@
-<!-- Navbar -->
 <header class="navbar">
     <div class="container">
         <h1 class="logo">
-            <a href="/"> 
+            <a href="/">
                 <img src="/favicon.png" class="logo-image" alt="">
                 Balangola
             </a>
         </h1>
-        <nav>
-            <a href="/servicos">Serviços</a>
-            <a href="/contactos">Contato</a>
-            <a href="/sobre">Sobre</a>
+
+        <!-- Ícone menu hambúrguer -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            ☰
+        </label>
+
+        <!-- Dropdown -->
+        <nav class="menu">
+            <ul>
+                <li><a href="/servicos">Serviços</a></li>
+                <li><a href="/contactos">Contato</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+            </ul>
         </nav>
     </div>
 </header>

@@ -2,6 +2,7 @@
 
 <!-- Importação dos ícones do Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <div class="page-container">
     <h1>Contactos</h1>
     <p>Entre em contacto connosco pelos seguintes meios:</p>
@@ -49,10 +50,15 @@
             </p>
         </div>
 
-        <!-- Waze Map -->
+        <!-- Google Map -->
         <div class="map">
-            <iframe id="wazeMap" src="https://embed.waze.com/iframe?zoom=16&lat=-8.834944&lon=13.261028&pin=1"
-                width="600" height="450" allowfullscreen>
+            <iframe 
+                id="googleMap" 
+                src="https://www.google.com/maps?q=-8.834944,13.261028&z=16&output=embed" 
+                width="100%"
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen loading="lazy">
             </iframe>
         </div>
     </div>
@@ -61,7 +67,7 @@
 <script>
     function showMap(event, lat, lon) {
         event.preventDefault();
-        var iframe = document.getElementById("wazeMap");
-        iframe.src = `https://embed.waze.com/iframe?zoom=16&lat=${lat}&lon=${lon}&pin=1`;
+        var iframe = document.getElementById("googleMap");
+        iframe.src = `https://www.google.com/maps?q=${lat},${lon}&z=16&output=embed`;
     }
 </script>

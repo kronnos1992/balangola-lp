@@ -1,58 +1,104 @@
 @page "/products"
 
-<div class="page-container">
-    <h1>Produtos</h1>
-    <p>Confira nossa lista de acessórios e materiais para reparação de celulares:</p>
+<div class="hero fade-in" style="max-height: 700px;">
+    <div class="hero-content">
+        <h1 style="color: whitesmoke;">Produtos</h1>
 
-    <!-- ==================== ACESSÓRIOS ==================== -->
-    <h2>Acessórios</h2>
+        <p style="color: whitesmoke;">Confira nossa lista de acessórios e materiais para reparação de celulares:</p>
+        <!-- Carrossel no Hero -->
+        <Caroussel Images="productHeroImages" />
+    </div>
+</div>
+
+<div class="page-container">
+    <h2>Confira a nossa grela de produtos</h2>
     <div class="products-grid">
 
         <!-- Capas -->
         <div class="product-card">
-            <img src="/images/produtos/p3.jpg" class="d-block w-100" alt="Capas">
-            <h3>Capas</h3>
-            <p>Capas protetoras para todos os modelos de celulares.</p>
+            <Caroussel Images="productVisoresImages" />
+            <h5>Visores</h5>
+            <p>Troque já o visor do seu celular com peças originais e garantia de qualidade!</p>
         </div>
+
 
         <!-- Carregadores -->
         <div class="product-card">
-            <img src="/images/produtos/c1.jpg" class="d-block w-100" alt="Carregadores">
-            <h3>Carregadores</h3>
+            <Caroussel Images="productCarregadoresImages" />
+            <h5>Carregadores</h5>
             <p>Carregadores originais e turbo de alta qualidade.</p>
         </div>
 
         <!-- Fones -->
         <div class="product-card">
-            <img src="/images/produtos/f2.jpg" class="d-block w-100" alt="Fones de Ouvido">
-            <h3>Fones de Ouvido</h3>
+            <Caroussel Images="productFonesImages" />
+            <h5>Fones de Ouvido</h5>
             <p>Fones com fio e bluetooth com excelente som.</p>
         </div>
-    </div>
-
-    <!-- ==================== MATERIAIS ==================== -->
-    <h2>Materiais para Reparação</h2>
-    <div class="products-grid">
 
         <!-- Visores -->
         <div class="product-card">
-            <img src="/images/produtos/m1.jpg" class="d-block w-100" alt="Visores">
-            <h3>Kit de Reparação</h3>
+            <Caroussel Images="productMateriaisImages" />
+            <h5>Kit de Reparação</h5>
             <p>Kit técnico para reparação de celulares e outros componentes eletrónicos.</p>
         </div>
 
         <!-- Baterias -->
         <div class="product-card">
-            <img src="/images/produtos/m3.jpg" class="d-block w-100" alt="Baterias">
-            <h3>Estanho</h3>
+            <Caroussel Images="productCapasImages" />
+            <h5>Capas Protetoras</h5>
             <p>Estanho para solda de componentes eletrónicos.</p>
-        </div>
-
-        <!-- Ferramentas -->
-        <div class="product-card">
-            <img src="/images/produtos/m4.jpg" class="d-block w-100" alt="Ferramentas">
-            <h3>Microscopio</h3>
-            <p>Microscopio eletrónico para visualização de componentes ínfemos.</p>
         </div>
     </div>
 </div>
+
+@code {
+    private List<string> productHeroImages = new()
+    {
+        "images/c1.jpg",
+        "images/f2.jpg",
+        "images/p3.jpg",
+    };
+
+    private List<string> productCapasImages = new()
+    {
+        "images/p1.jpg",
+        "images/p2.jpg",
+        "images/p3.jpg",
+        "images/p4.jpg",
+        "images/p5.jpg",
+        "images/p6.png",
+        "images/p7.jpg"
+    };
+
+    private List<string> productVisoresImages = new()
+    {
+        "images/v1.jpg",
+        "images/v2.jpg",
+        "images/v3.jpg",
+        "images/v4.jpg"
+    };
+
+    private List<string> productCarregadoresImages = new()
+    {
+        "images/c1.jpg",
+        "images/c2.jpg",
+        "images/c3.jpg"
+    };
+
+    private List<string> productFonesImages = new()
+    {
+        "images/f1.jpg",
+        "images/f2.jpg",
+        "images/f3.jpg",
+        "images/f4.jpg"
+    };
+
+    private List<string> productMateriaisImages = new()
+    {
+        "images/m1.jpg",
+        "images/m2.jpg",
+        "images/m3.jpg",
+        "images/m4.jpg"
+    };
+}

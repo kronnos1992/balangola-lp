@@ -1,0 +1,55 @@
+<div class="carousel-container">
+    <div class="carousel-track"
+        style="transform: translateX(calc(-@currentIndex * 100%)); transition: transform 0.5s ease;">
+        @foreach (var image in Images)
+        {
+            <img src="@image" alt="Imagem do Carrossel" />
+        }
+    </div>
+</div>
+
+<div class="carousel-buttons">
+    <button @onclick="prevSlide"><i class="fa-solid fa-circle-arrow-left"></i></button>
+    <button @onclick="nextSlide"><i class="fa-solid fa-circle-arrow-right"></i></button>
+</div>
+
+@code {
+    [Parameter]
+    public List<string> Images { get; set; } = new();
+
+    private int currentIndex = 0;
+    private System.Timers.Timer? timer;
+
+    protected override void OnInitialized()
+    {
+        if (Images?.Any() == true)
+        {
+            // cria um timer que dispara a cada 3 segundos
+            timer = new System.Timers.Timer(3000);
+            timer.Elapsed += (sender, args) =>
+            {
+                nextSlide();
+                InvokeAsync(StateHasChanged); // força a UI atualizar
+            };
+            timer.AutoReset = true;
+            timer.Start();
+        }
+    }
+
+    private void nextSlide()
+    {
+        if (Images?.Any() == true)
+            currentIndex = (currentIndex + 1) % Images.Count;
+    }
+
+    private void prevSlide()
+    {
+        if (Images?.Any() == true)
+            currentIndex = (currentIndex - 1 + Images.Count) % Images.Count;
+    }
+
+    public void Dispose()
+    {
+        timer?.Dispose();
+    }
+}
